@@ -1,0 +1,9 @@
+D:\Проекты Visual Studio\Daily\Daily\bin\Debug\Daily.exe.config
+D:\Проекты Visual Studio\Daily\Daily\bin\Debug\Daily.exe
+D:\Проекты Visual Studio\Daily\Daily\bin\Debug\Daily.pdb
+D:\Проекты Visual Studio\Daily\Daily\obj\Debug\Daily.csprojResolveAssemblyReference.cache
+D:\Проекты Visual Studio\Daily\Daily\obj\Debug\Daily.Form1.resources
+D:\Проекты Visual Studio\Daily\Daily\obj\Debug\Daily.Properties.Resources.resources
+D:\Проекты Visual Studio\Daily\Daily\obj\Debug\Daily.csproj.GenerateResource.Cache
+D:\Проекты Visual Studio\Daily\Daily\obj\Debug\Daily.exe
+D:\Проекты Visual Studio\Daily\Daily\obj\Debug\Daily.pdb
