@@ -5,9 +5,16 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Net;
+using System.IO;
+using System.Text.RegularExpressions;
+using System.Drawing.Imaging;
+using System.Collections;
+using System.Web;
 
 namespace Daily
 {
@@ -16,10 +23,26 @@ namespace Daily
         public Form1()
         {
             InitializeComponent();
+            
         }
 
         public string mainEvents = @"Events.dat";
 
+        public void LoadPage()
+        {
+            Uri url = new Uri("https://www.life-moon.pp.ru/");
+            //код для вставки в событие Click
+
+            webBrowser1.Url = url;
+            webBrowser1.ScriptErrorsSuppressed = true;
+            
+
+            MessageBox.Show(webBrowser1.IsBusy.ToString(), "IsBusy");
+        }
+      
+
+
+       
 
         public class Event
         {
@@ -56,7 +79,9 @@ namespace Daily
 
         private void Form1_Load(object sender, EventArgs e)
         {
+          
             Text = "Ежедневник 1.0";
+            LoadPage();
             BinaryReader reader = new BinaryReader(File.Open(mainEvents, FileMode.Open));
             while (reader.PeekChar() != -1)
             {
@@ -147,6 +172,25 @@ namespace Daily
                 }
             }
         }
+
+        public string GetHtmlPage(string url)
+        {
+
+            string HtmlText = string.Empty;
+            HttpWebRequest myHttpWebrequest = (HttpWebRequest)HttpWebRequest.Create(url);
+            HttpWebResponse myHttpWebresponse = (HttpWebResponse)myHttpWebrequest.GetResponse();
+            StreamReader strm = new StreamReader(myHttpWebresponse.GetResponseStream());
+            HtmlText = strm.ReadToEnd();
+            return HtmlText;
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+
     }
+    
 }
 
